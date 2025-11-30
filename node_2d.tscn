@@ -1,0 +1,328 @@
+[gd_scene load_steps=39 format=4 uid="uid://dwk3abqbxmwiy"]
+
+[ext_resource type="Texture2D" uid="uid://djdfnh7tiqacf" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/BG Image.png" id="1_2hxjc"]
+[ext_resource type="Texture2D" uid="uid://b0qkjqysxuve3" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="1_rjqkl"]
+[ext_resource type="Texture2D" uid="uid://co48v6jxu3hg0" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 02.png" id="2_fs4d3"]
+[ext_resource type="Texture2D" uid="uid://bwwu58vyglqsq" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 03.png" id="3_7vxoj"]
+[ext_resource type="Script" uid="uid://csn4hc32qww70" path="res://character_body_movement.tres.gd" id="4_2nhjh"]
+[ext_resource type="Texture2D" uid="uid://duvwg1aa2v2oi" path="res://Treasure Hunters/Pirate Treasure/Sprites/Silver Coin/01.png" id="4_e8dv2"]
+[ext_resource type="Texture2D" uid="uid://bnu3vneixvuws" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 04.png" id="4_ei405"]
+[ext_resource type="Texture2D" uid="uid://bqvxbwyir7ads" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 01.png" id="4_k73cj"]
+[ext_resource type="Texture2D" uid="uid://djgip175fyeh0" path="res://Treasure Hunters/Pirate Treasure/Sprites/Silver Coin/02.png" id="5_2nhjh"]
+[ext_resource type="Texture2D" uid="uid://oylif50fs42y" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 05.png" id="5_e8dv2"]
+[ext_resource type="Texture2D" uid="uid://b011q3uvd5phl" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 02.png" id="5_rjqkl"]
+[ext_resource type="Texture2D" uid="uid://cabnfmh5k6ouv" path="res://Treasure Hunters/Pirate Treasure/Sprites/Silver Coin/03.png" id="6_bjha6"]
+[ext_resource type="Texture2D" uid="uid://bn0m47cxplg0n" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 03.png" id="6_fs4d3"]
+[ext_resource type="Texture2D" uid="uid://syug6wl1hy87" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 04.png" id="7_7vxoj"]
+[ext_resource type="Texture2D" uid="uid://b4u7c054bsb84" path="res://Treasure Hunters/Pirate Treasure/Sprites/Silver Coin/04.png" id="7_gt76g"]
+[ext_resource type="Texture2D" uid="uid://cjjmpn8iesqh0" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 05.png" id="8_ei405"]
+[ext_resource type="Texture2D" uid="uid://bl38tfpvxs6mp" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 06.png" id="9_e8dv2"]
+[ext_resource type="Texture2D" uid="uid://lbapshra7133" path="res://Treasure Hunters/Terrain (32x32).png" id="10_2hxjc"]
+[ext_resource type="Texture2D" uid="uid://beukfagmaq75a" path="res://Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="11_ebxd8"]
+[ext_resource type="Texture2D" uid="uid://bp0qkrlbayjjg" path="res://Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Tree Top 01.png" id="12_2u7jv"]
+[ext_resource type="Texture2D" uid="uid://bmqojkhdkjbyp" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 01.png" id="15_2nhjh"]
+[ext_resource type="Texture2D" uid="uid://dxbi3riany2qr" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 02.png" id="16_bjha6"]
+[ext_resource type="Texture2D" uid="uid://cg4jgpg5e8k6d" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 03.png" id="17_gt76g"]
+[ext_resource type="Script" uid="uid://qfl3pdddg871" path="res://Coin01.gd" id="20_bjha6"]
+[ext_resource type="Texture2D" uid="uid://c0njbpklowlkx" path="res://Treasure Hunters/Palm Tree Island/Sprites/Objects/Spikes/Spikes.png" id="25_bjha6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0e48y"]
+texture = ExtResource("10_2hxjc")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+13:0/0 = 0
+13:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+15:0/0 = 0
+15:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+10:1/0 = 0
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+12:1/0 = 0
+12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+13:1/0 = 0
+13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+15:1/0 = 0
+15:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+16:1/0 = 0
+16:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:3/0 = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+10:3/0 = 0
+10:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+12:3/0 = 0
+12:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+13:3/0 = 0
+13:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+15:3/0 = 0
+15:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+16:3/0 = 0
+16:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:4/0 = 0
+9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+10:4/0 = 0
+10:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+12:4/0 = 0
+12:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+13:4/0 = 0
+13:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+15:4/0 = 0
+15:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+16:4/0 = 0
+16:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7vxoj"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_0e48y")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4d7sh"]
+texture = ExtResource("11_ebxd8")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_epypp"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_4d7sh")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q6r6c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_k73cj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rjqkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fs4d3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7vxoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ei405")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e8dv2")
+}],
+"loop": true,
+"name": &"laufen",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rjqkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fs4d3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7vxoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ei405")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e8dv2")
+}],
+"loop": true,
+"name": &"ruhe",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_2nhjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bjha6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gt76g")
+}],
+"loop": true,
+"name": &"springen",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2hxjc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gt76g"]
+radius = 5.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1fr6y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_e8dv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2nhjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bjha6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gt76g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2nhjh"]
+distance = 48.0
+
+[sub_resource type="GDScript" id="GDScript_gt76g"]
+
+[sub_resource type="GDScript" id="GDScript_bjha6"]
+script/source = "extends Area2D
+
+@onready var timer = $Timer
+var _body_entered = null
+
+func _on_body_entered(body: Node2D) -> void:
+	body.leben -=1
+	_body_entered = body
+	
+func _on_timer_timeout() -> void:
+	_body_entered.leben -= 1
+"
+
+[sub_resource type="GDScript" id="GDScript_1fr6y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gt76g"]
+size = Vector2(33, 17)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BgImage" type="Sprite2D" parent="."]
+position = Vector2(1011.99994, 54)
+scale = Vector2(7.36914, 5.2094727)
+texture = ExtResource("1_2hxjc")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wEAAQAAAAAAAAD//wMAAQAAAAIAAAAAAAEAAQABAAAAAAAAAAIAAQABAAEAAAABAAEAAQACAAAAAAABAAIAAQACAAEAAAABAAMAAQACAAIAAAAAAAMAAQABAAIAAAD//wIAAQAAAAEAAAALAAEAAQAAAAQAAAAMAAEAAQABAAQAAAANAAEAAQACAAQAAAA=")
+tile_set = SubResource("TileSet_7vxoj")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAAAAAAAAAAAAAABAAEAAAAAAAEAAAABAP//AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_epypp")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wEAAQAAAAAAAAD//wMAAQAAAAIAAAAAAAEAAQABAAAAAAAAAAIAAQABAAEAAAABAAEAAQACAAAAAAABAAIAAQACAAEAAAABAAMAAQACAAIAAAAAAAMAAQABAAIAAAD//wIAAQAAAAEAAAADAAEAAQAEAAAAAAADAAIAAQAEAAEAAAADAAMAAQAEAAIAAAAFAAIAAQAEAAAAAAAFAAMAAQAEAAEAAAAFAAQAAQAEAAIAAAAHAAEAAQAEAAQAAAAJAAAAAQAEAAQAAAAPAAAAAQAAAAQAAAAQAAAAAQABAAQAAAARAAAAAQACAAQAAAATAAIAAQAEAAQAAAAUAP//AQAEAAQAAAAXAP//AQAEAAQAAAAVAAMAAQAEAAQAAAAYAAMAAQAEAAQAAAAaAAIAAQAEAAQAAAA=")
+tile_set = SubResource("TileSet_7vxoj")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("4_2nhjh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_q6r6c")
+animation = &"ruhe"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_2hxjc")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(6, 6)
+
+[node name="FrontPalmTreeTop01" type="Sprite2D" parent="."]
+position = Vector2(47, -48)
+texture = ExtResource("12_2u7jv")
+
+[node name="Coin01" type="Area2D" parent="."]
+script = ExtResource("20_bjha6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin01"]
+position = Vector2(303, -25)
+shape = SubResource("CircleShape2D_gt76g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coin01"]
+position = Vector2(303, -26)
+sprite_frames = SubResource("SpriteFrames_1fr6y")
+frame_progress = 0.13502245
+
+[node name="WorldBoundary" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary"]
+position = Vector2(119, 220)
+shape = SubResource("WorldBoundaryShape2D_2nhjh")
+script = SubResource("GDScript_gt76g")
+
+[node name="Stacheln2" type="Area2D" parent="."]
+position = Vector2(391, 16)
+script = SubResource("GDScript_bjha6")
+
+[node name="Stacheln1" type="Sprite2D" parent="Stacheln2"]
+texture = ExtResource("25_bjha6")
+script = SubResource("GDScript_1fr6y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stacheln2"]
+position = Vector2(0.5, 7.5)
+shape = SubResource("RectangleShape2D_gt76g")
+
+[connection signal="body_entered" from="Coin01" to="Coin01" method="_on_body_entered"]
