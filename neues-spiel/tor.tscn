@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cc158wddwe0ic"]
+
+[ext_resource type="Texture2D" uid="uid://ddindwdsxc8fu" path="res://Tor.png" id="1_by47n"]
+[ext_resource type="Texture2D" uid="uid://bxi5p2yg4c7q8" path="res://lock.png" id="2_1they"]
+[ext_resource type="Texture2D" uid="uid://bl8awg245u7py" path="res://lock2.png" id="3_pwogb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_by47n"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_by47n"]
+texture = ExtResource("1_by47n")
+texture_region_size = Vector2i(121, 121)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 56, -40, -40, 40, -40, 40, 56, -8, 56)
+
+[sub_resource type="TileSet" id="TileSet_pwogb"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_by47n")
+sources/1 = SubResource("TileSetAtlasSource_by47n")
+
+[sub_resource type="GDScript" id="GDScript_by47n"]
+script/source = "extends TileMapLayer
+@onready var lock = $AnimatedSprite2D
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	collision_enabled = true
+	lock.frame = 0
+		
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+	
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	lock.frame = 1  # Sets the frame index for the current animation
+	collision_enabled = false
+	
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bffir"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1they")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pwogb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tor" type="TileMapLayer" unique_id=1641854874]
+position = Vector2(18, 0)
+tile_map_data = PackedByteArray(0, 0, 3, 0, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_pwogb")
+script = SubResource("GDScript_by47n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1659938649]
+position = Vector2(56, 67.00001)
+scale = Vector2(0.27333334, 0.27333334)
+sprite_frames = SubResource("SpriteFrames_bffir")

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bsucaw06i4ne1"]
+
+[ext_resource type="Texture2D" uid="uid://d4gv7ryjotvmv" path="res://key.png" id="1_up4cr"]
+
+[sub_resource type="GDScript" id="GDScript_up4cr"]
+script/source = "extends Area2D 
+@onready var key = $\".\"
+func _ready() -> void:
+	_random_position()
+	
+func _random_position():
+	var liste_positionen = [Vector2(307,342),Vector2(896,492)]
+	key.position = liste_positionen[randi_range(0,liste_positionen.size() - 1)]
+
+func _on_body_entered(body: Node2D) -> void:
+	queue_free()
+	pass # Replace with function body.
+	
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p0yg6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_up4cr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_up4cr"]
+radius = 61.0
+height = 198.0
+
+[node name="Area2D" type="Area2D" unique_id=927663078]
+script = SubResource("GDScript_up4cr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1940629403]
+sprite_frames = SubResource("SpriteFrames_p0yg6")
+frame_progress = 0.6060576
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2016741139]
+position = Vector2(3, 0)
+shape = SubResource("CapsuleShape2D_up4cr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://b233wkwnjh1oq"]
+
+[ext_resource type="Texture2D" uid="uid://btjbalg1hpna3" path="res://spikes.png" id="1_s0g1x"]
+
+[sub_resource type="GDScript" id="GDScript_s0g1x"]
+script/source = "extends Area2D
+@onready var spikes = $\".\"
+@onready var spikes_sprite = $AnimatedSprite2D
+
+var animation_playing = false
+var spikes_aktiv = true
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	animation_playing = true
+	pass
+func _process(delta: float) -> void:
+	_delay()
+
+func _delay():
+	if animation_playing:
+		spikes_sprite.play(\"default\")
+		# Stop at frame 6
+		if spikes_sprite.frame == 6:
+			spikes_sprite.stop()
+			get_node(\"SpikeCollision\").set_deferred(\"disabled\", true)
+			animation_playing = false
+			$Timer.start()
+func _on_timer_timeout() -> void:
+	get_node(\"SpikeCollision\").set_deferred(\"disabled\", false)
+	animation_playing = true
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"player\"):
+		pass
+		
+
+	
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrdsm"]
+atlas = ExtResource("1_s0g1x")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fhau"]
+atlas = ExtResource("1_s0g1x")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds4fp"]
+atlas = ExtResource("1_s0g1x")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4mtd"]
+atlas = ExtResource("1_s0g1x")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_688ft"]
+atlas = ExtResource("1_s0g1x")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i801f"]
+atlas = ExtResource("1_s0g1x")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx7pl"]
+atlas = ExtResource("1_s0g1x")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b480t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrdsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fhau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ds4fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4mtd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_688ft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i801f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx7pl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.5
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0g1x"]
+size = Vector2(56, 63)
+
+[node name="Area2D" type="Area2D" unique_id=460352941 groups=["spikes"]]
+script = SubResource("GDScript_s0g1x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1243021395]
+sprite_frames = SubResource("SpriteFrames_b480t")
+frame = 3
+
+[node name="SpikeCollision" type="CollisionShape2D" parent="." unique_id=1578960074]
+shape = SubResource("RectangleShape2D_s0g1x")
+
+[node name="Timer" type="Timer" parent="." unique_id=420060120]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

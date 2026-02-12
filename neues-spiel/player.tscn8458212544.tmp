@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dul0st3rtkh88"]
+
+[ext_resource type="Texture2D" uid="uid://d1q8lvbm6jlec" path="res://character.png" id="1_wtcfe"]
+
+[sub_resource type="GDScript" id="GDScript_4flbx"]
+script/source = "extends CharacterBody2D
+
+# Movement speed in pixels per second
+# @export makes this variable editable in the Inspector
+@export var speed = 300.0
+@onready var player = $Sprite2D
+
+# This function runs every frame
+func _physics_process(delta):
+	# Get input direction as a Vector2
+	# Input.get_vector automatically checks all four movement actions
+	# and returns a normalized direction vector
+	var direction = Input.get_vector(\"move_left\", \"move_right\", \"move_up\", \"move_down\")
+	player.scale(2)
+	
+
+	# Set velocity based on input direction and speed
+	# Velocity is a built-in property of CharacterBody2D
+	velocity = direction * speed
+
+	# Move the character using built-in physics
+	# move_and_slide() handles collision detection automatically
+	# It moves the character and stops at obstacles smoothly
+	move_and_slide()
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wtcfe"]
+
+[node name="Node2D" type="Node2D" unique_id=408845134]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1142713069]
+position = Vector2(548, 294)
+script = SubResource("GDScript_4flbx")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1756434067]
+texture = ExtResource("1_wtcfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1346456478]
+shape = SubResource("CapsuleShape2D_wtcfe")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=939318476]
+zoom = Vector2(1.75, 1.75)

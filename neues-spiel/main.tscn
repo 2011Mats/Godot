@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://5td4ornbutf7"]
+
+[ext_resource type="PackedScene" uid="uid://dul0st3rtkh88" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dogh78ge6nljt" path="res://walls.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cc158wddwe0ic" path="res://tor.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bsucaw06i4ne1" path="res://key.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://b233wkwnjh1oq" path="res://spikes.tscn" id="5_lquwl"]
+
+[node name="Main" type="Node2D" unique_id=252571913]
+
+[node name="bushes" parent="." unique_id=610285584 instance=ExtResource("2_0xm2m")]
+position = Vector2(583, 322)
+
+[node name="key" parent="." unique_id=927663078 instance=ExtResource("4_1bvp3")]
+scale = Vector2(0.06332938, 0.06751007)
+
+[node name="tor" parent="." unique_id=1641854874 instance=ExtResource("3_h2yge")]
+position = Vector2(1051, 504)
+scale = Vector2(0.64, 0.64)
+
+[node name="spikes" parent="." unique_id=460352941 instance=ExtResource("5_lquwl")]
+position = Vector2(342, 356.00003)
+scale = Vector2(0.4522276, 0.4522276)
+
+[node name="player" parent="." unique_id=408845134 instance=ExtResource("1_ig7tw")]
+position = Vector2(593, 323)
+
+[connection signal="body_entered" from="key" to="tor" method="_on_area_2d_body_entered"]
